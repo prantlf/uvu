@@ -34,6 +34,7 @@
 * Browser-Compatible
 * Familiar API
 
+This fork includes benchmarks with up-to-date versions of test frameworks and additional ones - `baretest`, `jasmine`, `pta`, `tap`, `test` and `zora` - including sizes of their NPM packages, all executed in the current Node.js 14 LTS. See the [benchmark results](#benchmarks) below.
 
 ## Install
 
@@ -114,7 +115,7 @@ A collection of assertion methods to use within your tests. Please note that:
 
 ## Benchmarks
 
-> via the [`/bench`](/bench) directory with Node v10.24.0
+> via the [`/bench`](/bench) directory with Node v14.16.0
 
 Below you'll find each test runner with the following values:
 
@@ -124,18 +125,36 @@ Below you'll find each test runner with the following values:
 
 Each test runner's `stdout` is printed to the console to verify all assertions pass.<br>Said output is excluded below for brevity.
 
+First run:
+
 ```
-~> "ava"      took   637ms  (  ???  )  ( 2,480.00 KiB)
-~> "baretest" took    47ms  (  ???  )  (     6.42 KiB)
-~> "jasmine"  took    81ms  (  9.0ms)  (   149.81 KiB)
-~> "jest"     took 1,040ms  (423.0ms)  ( 8,350.00 KiB)
-~> "mocha"    took   206ms  (  3.0ms)  ( 1,590.00 KiB)
-~> "pta"      took   108ms  (  ???  )  (   350.77 KiB)
-~> "tap"      took   472ms  (  ???  )  (16,880.00 KiB)
-~> "tape"     took   112ms  (  ???  )  (   568.69 KiB)
-~> "test"     took    46ms  (  ???  )  (   159.06 KiB)
-~> "uvu"      took    59ms  (  0.8ms)  (   145.04 KiB)
-~> "zora"     took    50ms  (  ???  )  (    20.72 KiB)
+~> "ava"      took 1,080ms  (  ???  )  ( 2,480.00 KiB)
+~> "baretest" took    57ms  (  ???  )  (     6.42 KiB)
+~> "jasmine"  took    97ms  ( 11.0ms)  (   149.81 KiB)
+~> "jest"     took 1,680ms  (616.0ms)  ( 8,350.00 KiB)
+~> "mocha"    took   307ms  (  4.0ms)  ( 1,590.00 KiB)
+~> "pta"      took   133ms  (  ???  )  (   350.77 KiB)
+~> "tap"      took   737ms  (361.1ms)  (16,880.00 KiB)
+~> "tape"     took   175ms  (  ???  )  (   568.69 KiB)
+~> "test"     took    47ms  (  ???  )  (   159.06 KiB)
+~> "uvu"      took    66ms  (  0.8ms)  (   145.04 KiB)
+~> "zora"     took    56ms  (  ???  )  (    20.72 KiB)
+```
+
+Second run:
+
+```
+~> "ava"      took   714ms  (  ???  )
+~> "baretest" took    54ms  (  ???  )
+~> "jasmine"  took    93ms  ( 11.0ms)
+~> "jest"     took 1,170ms  (480.0ms)
+~> "mocha"    took   228ms  (  4.0ms)
+~> "pta"      took   117ms  (  ???  )
+~> "tap"      took   595ms  (344.4ms)
+~> "tape"     took   126ms  (  ???  )
+~> "test"     took    54ms  (  ???  )
+~> "uvu"      took    63ms  (  0.8ms)
+~> "zora"     took    54ms  (  ???  )
 ```
 
 ## License
